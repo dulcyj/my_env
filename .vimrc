@@ -1,11 +1,14 @@
+" This is my personal .vimrc
+
+" Common
+" Common to all plateform
 function Common()
-	syntax on
+    syntax on
 endfunction
 
-" For Mac, key  map key down
-if has("mac")
-  "open a file in TextMate from vi 
-  nmap mate :w<CR>:!mate %<CR>
+" For_mac
+" Related to mac plateform
+function For_mac()
   map <Esc>[A :tabnew<CR>
   map <Esc>[B :q<CR>
   map <Esc>[D gT
@@ -14,6 +17,23 @@ if has("mac")
   set laststatus=2
   set textwidth=80
   call Common()
-elseif has("unix")
+endfunction
+
+" For_unix
+" Related to unix plateform
+function For_unix()
   call Common()
-endif
+endfunction
+
+
+" Main
+function Main()
+    if has("mac")
+      call For_mac()
+    elseif has("unix")
+      call For_unix()
+    endif
+endfunction
+
+" Call Main
+call Main()
