@@ -2,9 +2,11 @@
 " Common
 " Common to all plateform
 function Common()
+    " Use space instead of tab
     set shiftwidth=4
     set expandtab
     set tabstop=4
+    " Activate color
     syntax on
 endfunction
 
