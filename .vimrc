@@ -8,6 +8,8 @@ function Common()
     set tabstop=4
     " Activate color
     syntax on
+    set incsearch
+    set cmdheight=2
 endfunction
 
 " For_mac
