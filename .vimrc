@@ -9,7 +9,10 @@ function Common()
     " Activate color
     syntax on
     set incsearch
-    set cmdheight=2
+    set cmdheight=2set tabstop=4
+    " High in red characters after 80th column
+    highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+    match OverLength /\%81v.\+/
 endfunction
 
 " For_mac
