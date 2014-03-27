@@ -20,6 +20,16 @@ function Common()
     autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
     autocmd InsertLeave * match ExtraWhitespace /\s\+$/
     autocmd BufWinLeave * call clearmatches()
+    
+    " Git
+    " cd to top root of git repo
+    alias git-root='cd $(git rev-parse --show-cdup)'
+    alias lg1="git log --graph --abbrev-commit --decorate --date=relative \
+    --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) \
+    %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' \
+    --all"
+
+    
 endfunction
 
 " For_mac
