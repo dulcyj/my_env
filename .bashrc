@@ -1,8 +1,7 @@
-
-
-
-
-
+#### 
+# Personal .bashrc
+# date : 03/04/2014
+#
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
