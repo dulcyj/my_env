@@ -17,6 +17,15 @@ function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
 
+function go(){
+    if [ -f /usr/bin/screen ];
+    then
+        screen -t $1 ssh $1
+    else
+        ssh $1
+fi
+}
+
 alias lg1="git log --graph --abbrev-commit --decorate --date=relative \
 --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) \
 %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' \
