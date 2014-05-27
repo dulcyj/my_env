@@ -12,6 +12,9 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+## Alias
+alias ll="ls -lah"
+
 # User specific aliases and functions
 function parse_git_branch {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
